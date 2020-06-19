@@ -1,4 +1,4 @@
-TITLE lab3-ex06
+TITLE lab4-ex06
 
 INCLUDE Irvine32.inc
 
