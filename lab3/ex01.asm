@@ -13,7 +13,7 @@ INCLUDE Irvine32.inc
 .code
 main PROC
 	mov ax, 0
-	mov ecx, 7	; Вычисление первых 7 чисел.
+	mov ecx, 7
 	L1:
 		mov eax, var1
 		add eax, var2
