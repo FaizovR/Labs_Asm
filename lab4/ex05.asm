@@ -9,6 +9,7 @@ INCLUDE Irvine32.inc
 
 .code
 main PROC
+	call Randomize
 	mov ecx, 50
 L1:
 	mov	eax, 41

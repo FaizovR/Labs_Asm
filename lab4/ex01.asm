@@ -3,6 +3,8 @@ TITLE lab4-ex01
 ; a) Напишите программу, которая бы последовательно
 ; выводила одну и ту же строку текста четырьмя разными цветами.
 
+; textColor + (backgrroundColor * 16)
+
 INCLUDE Irvine32.inc
 
 .data

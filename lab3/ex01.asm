@@ -4,24 +4,20 @@ TITLE lab3-ex01
 ; последовательности Фибоначчи: {1, 1, 2, 3, 5, 8, 13}.
 ; Каждое число нужно загрузить в регистр EAX и
 ; отобразить в цикле через call DumpRegs.
+
 INCLUDE Irvine32.inc
 
 .data
-	var1 DWORD 0
-	var2 DWORD 1
 
 .code
 main PROC
-	mov ax, 0
 	mov ecx, 7
+	mov al, 0
+	mov ah, 1
 L1:
-	mov eax, var1
-	add eax, var2
-	call DumpRegs
-	mov var1, eax
-	sub eax, var2
-	mov var2, eax
-	inc ax
+	add ah, al
+	xchg al, ah
+	call DumpRegs 
 	loop L1
 	exit
 main ENDP
