@@ -10,12 +10,13 @@ INCLUDE Irvine32.inc
 .code
 main PROC
 	mov ecx, 50
-	L1:
-		mov	eax, 41
-		call RandomRange
-		sub eax, 20
-		call WriteInt
-		loop L1
+L1:
+	mov	eax, 41
+	call RandomRange
+	sub eax, 20
+	call WriteInt
+	loop L1
+
 	exit
 main ENDP
 END main

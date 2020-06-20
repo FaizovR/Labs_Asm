@@ -8,42 +8,42 @@ INCLUDE Irvine32.inc
 
 .code
 main PROC
-; Сброс флага ZF:
+; reset ZF:
 	mov al, 0
-	add al, 1		; ADD - суммирование получателью,источник
+	add al, 1
 	call DumpRegs	; ZF = 0
 	
-; Установка ZF:
+; check ZF:
 	mov al, +1
-	add al, -1		; ADD - суммирование получателью,источник
+	add al, -1
 	call DumpRegs	; ZF = 1
 	
-; Сброс ZF:
+; reset ZF:
 	mov al, 0
-	add al, 1		; ADD - суммирование получателью,источник
+	add al, 1
 	call DumpRegs	; ZF = 0
 	
-; Установка ZF:
+; check ZF:
 	mov al, 1
-	sub al, 1		; SUB - Вычитание получателью,источник
+	sub al, 1
 	call DumpRegs	; ZF = 1
 
-; Сброс SF:
+; reset SF:
 	mov al, 1
 	add al, 1
 	call DumpRegs	; SF = 0
 	
-; Установка SF:
+; check SF:
 	mov al, 0
 	add al, -1
 	call DumpRegs	; SF = 1
 	
-; Сброс SF:
+; reset SF:
 	mov al, 1
 	add al, 1
 	call DumpRegs	; SF = 0
 	
-; Установка SF:
+; check SF:
 	mov al, 0
 	sub al, 1
 	call DumpRegs	; SF = 1

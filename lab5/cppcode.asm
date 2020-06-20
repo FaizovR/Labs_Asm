@@ -28,6 +28,7 @@ main PROC
 	mov ebx, op2
 	mov ecx, op3
 	mov edx, x
+
 	.WHILE eax < ebx
 		add eax, 1
 		.IF ebx == ecx
@@ -36,10 +37,12 @@ main PROC
 			mov edx, 3
 		.ENDIF
 	.ENDW
+
 	mov op1, eax
 	mov op2, ebx
 	mov op3, ecx
 	mov x, edx
+	
 	call DumpRegs
 	call crlf
 	exit

@@ -24,15 +24,16 @@ main ENDP
 getIntArray PROC 
 	mov ecx, 10
 	mov esi, OFFSET input_message
-	L1:
-		mov	edx, esi
-		call WriteString
-		call ReadInt
-		mov ebx, OFFSET array
-		add ebx, index
-		mov [ebx], eax
-		add index, TYPE array
-		loop L1
+L1:
+	mov	edx, esi
+	call WriteString
+	call ReadInt
+	mov ebx, OFFSET array
+	add ebx, index
+	mov [ebx], eax
+	add index, TYPE array
+	loop L1
+
 	ret
 getIntArray ENDP
 
@@ -41,15 +42,17 @@ printArray PROC
 	call WriteString
 	mov index, 0
 	mov ecx, 10
-	L2:
-		mov ebx, OFFSET array
-		add ebx, index
-		mov	eax, [ebx]
-		call WriteInt
-		mov	edx, OFFSET comma
-		call WriteString
-		add index, TYPE array
-		loop L2
+
+L2:
+	mov ebx, OFFSET array
+	add ebx, index
+	mov	eax, [ebx]
+	call WriteInt
+	mov	edx, OFFSET comma
+	call WriteString
+	add index, TYPE array
+	loop L2
+	
 	mov	edx, OFFSET closeBracket
 	call WriteString
 	ret

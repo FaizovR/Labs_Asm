@@ -12,26 +12,26 @@ INCLUDE Irvine32.inc
 	
 .code
 main PROC
-; Сброс флага CF.
-	mov al, 1		
-	add al, 1		; ADD - суммирование получателью,источник
-	call DumpRegs	; CF = 0
+; reset CF.
+	mov al, 1
+	add al, 1
+	call DumpRegs
 
-; Проверка, что add устанавливают флаг CF:
+; check CF:
 	mov al, var1
-	add al, 1		; ADD - суммирование получателью,источник
+	add al, 1
 	call DumpRegs	; CF = 1
-	
-; Сброс флага CF.
-	mov al, 1		
-	add al, 1		; ADD - суммирование получателью,источник
+
+; reset CF.
+	mov al, 1
+	add al, 1
 	call DumpRegs	; CF = 0
 
-; Проверка, что sub устанавливают флаг CF:
+; check CF:
 	mov al, var2
-	sub al, 1		; SUB - Вычитание получателью,источник
+	sub al, 1
 	call DumpRegs	; CF = 1
-	
+
 	exit
 main ENDP
 END main

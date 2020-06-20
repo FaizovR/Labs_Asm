@@ -14,15 +14,15 @@ INCLUDE Irvine32.inc
 main PROC
 	mov ax, 0
 	mov ecx, 7
-	L1:
-		mov eax, var1
-		add eax, var2
-		call DumpRegs
-		mov var1, eax
-		sub eax, var2
-		mov var2, eax
-		inc ax
-		loop L1
+L1:
+	mov eax, var1
+	add eax, var2
+	call DumpRegs
+	mov var1, eax
+	sub eax, var2
+	mov var2, eax
+	inc ax
+	loop L1
 	exit
 main ENDP
 END main

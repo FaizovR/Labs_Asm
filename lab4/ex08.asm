@@ -50,7 +50,6 @@ L2:
 	add color, 16
 	mov eax, color
 	call SetTextColor
-
 	loop L2
 
 	call CrLf

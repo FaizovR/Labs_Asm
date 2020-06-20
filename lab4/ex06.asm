@@ -12,10 +12,12 @@ INCLUDE Irvine32.inc
 main PROC
 	call Randomize
 	mov ecx, 20
-	L1:
-		call getString
-		call println
-		loop L1
+
+L1:
+	call getString
+	call println
+	loop L1
+
 	exit
 main ENDP
 
@@ -23,13 +25,15 @@ getString PROC
 	mov edx, OFFSET string
 	mov ebx, ecx
 	mov ecx, 10
-	L2:
-		mov	eax, 26
-		call RandomRange
-		add eax, 65
-		mov	[edx], eax
-		add edx, 1
-		loop L2
+
+L2:
+	mov	eax, 26
+	call RandomRange
+	add eax, 65
+	mov	[edx], eax
+	add edx, 1
+	loop L2
+
 	mov ecx, ebx
 	ret
 getString ENDP

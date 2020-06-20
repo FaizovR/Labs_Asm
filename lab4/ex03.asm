@@ -19,32 +19,38 @@ main ENDP
 
 sumDigits PROC
 	call ClrScr
+
 	mov dh, 7
 	mov dl, 50
 	call GotoXY
 	call ReadInt
 	mov [num1], eax
+
 	mov dh, 8
 	mov dl, 50
 	call GotoXY
 	mov	edx, OFFSET plus
 	call WriteString
+
 	mov dh, 9
 	mov dl, 50
 	call GotoXY
 	call ReadInt
 	mov [num2], eax
+
 	mov dh, 10
 	mov dl, 50
 	call GotoXY
 	mov	edx, OFFSET equal
 	call WriteString
+
 	mov dh, 11
 	mov dl, 50
 	call GotoXY
 	mov eax, num1
 	add eax, num2
 	call WriteInt
+	
 	ret
 sumDigits ENDP
 

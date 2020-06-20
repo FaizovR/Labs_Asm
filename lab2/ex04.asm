@@ -12,24 +12,24 @@ INCLUDE Irvine32.inc
 
 .code
 main PROC
-; Сброс OF (add):
+; reset OF
 	add al, 1
 	call DumpRegs	; OF = 0
 
-; Установка OF (add):
+; check OF
 	mov al, var1
 	add al, 1
 	call DumpRegs	; OF = 1
-	
-; Сброс OF (add):
+
+; reset OF
 	add al, 1
 	call DumpRegs	; OF = 0
-	
-; Установка OF (sub):
+
+; check OF
 	mov al, var2
 	sub al, 1
 	call DumpRegs	; OF = 1
-	
+
 	exit
 main ENDP
 END main
